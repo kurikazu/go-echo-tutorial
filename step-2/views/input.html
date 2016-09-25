@@ -1,0 +1,16 @@
+{{define "input"}}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>一行妄想</title>
+  </head>
+<body>
+  <h1>一行妄想</h1>
+  <h2>登録</h2>
+  <form name="form" method="POST" action="/fantasy/post">
+    <input type="text" maxlength="100" name="fantasy">
+    <input type="submit" value="登録">
+  </form>
+</body>
+</html>
+{{end}}
