@@ -12,11 +12,13 @@ import (
 )
 
 func init() {
+
 	logrus.SetLevel(logrus.DebugLevel)
 	logrus.SetFormatter(&logrus.JSONFormatter{})
 }
 
 func main() {
+
 	// instance
 	e := echo.New()
 	e.Debug()
@@ -33,10 +35,12 @@ func main() {
 }
 
 func hello(c echo.Context) error {
+
 	return c.String(http.StatusOK, "Hello World!\n")
 }
 
 func port() string {
+
 	port := os.Getenv("PORT")
 	if len(port) == 0 {
 		port = "8080" // localhost:8080
