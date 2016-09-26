@@ -14,7 +14,7 @@ goのフレームワーク[Echo](https://echo.labstack.com)で遊ぶチュート
 
 ## Agenda
 
-1. [環境設定](https://github.com/dip-dev/go-echo-tutorial/blob/master/環境設定.md)の確認
+1. 環境設定の確認
 1. Step-1: 動かしてみよう!
 1. Step-2: 寝る前に一行妄想を登録するツールを作ってみよう！
 
