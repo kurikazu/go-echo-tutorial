@@ -45,7 +45,8 @@ func main() {
     e.Renderer = t
 
     // routes
-    e.GET("/fantasy",  controllers.InputFantasy())
+    e.GET("/fantasy/:id", controllers.GetFantasy())
+    e.GET("/fantasy", controllers.InputFantasy())
     e.POST("/fantasy/post", controllers.PostFantasy())
 
     // start server

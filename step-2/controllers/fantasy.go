@@ -1,6 +1,7 @@
 package controllers
 
 import (
+    "strconv"
     "net/http"
 
     "github.com/labstack/echo"
@@ -32,4 +33,21 @@ func PostFantasy() echo.HandlerFunc {
 
         return c.Render(http.StatusOK, "complete", nil)
     }
+}
+
+func GetFantasy() echo.HandlerFunc {
+
+   return func(c echo.Context) (err error) {
+       p := c.Param("id")
+       id, _ := strconv.ParseInt(p, 0, 64)
+       session := config.GetSession()
+
+       fantasy := new(models.Fantasy)
+       if err := fantasy.Load(session, id); err != nil {
+           logrus.Debug(err)
+           return echo.NewHTTPError(http.StatusNotFound, "Fantasy ID:"+p+" does not exists.")
+       }
+
+       return c.Render(http.StatusOK, "fantasy", fantasy)
+   }
 }
