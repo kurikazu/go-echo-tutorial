@@ -1,14 +1,14 @@
 package controllers
 
 import (
-	"strconv"
 	"net/http"
+	"strconv"
 
 	"github.com/labstack/echo"
 
 	"github.com/Sirupsen/logrus"
-	"step-2/models"
 	"step-2/config"
+	"step-2/models"
 )
 
 func InputFantasy() echo.HandlerFunc {
@@ -37,7 +37,7 @@ func PostFantasy() echo.HandlerFunc {
 
 func GetFantasy() echo.HandlerFunc {
 
-	 return func(c echo.Context) (err error) {
+	return func(c echo.Context) (err error) {
 		p := c.Param("id")
 		id, _ := strconv.ParseInt(p, 0, 64)
 		session := config.GetSession()
@@ -49,5 +49,5 @@ func GetFantasy() echo.HandlerFunc {
 		}
 
 		return c.Render(http.StatusOK, "fantasy", fantasy)
-	 }
+	}
 }

@@ -2,12 +2,12 @@
 package main
 
 import (
-	"os"
-	"io"
-	"html/template"
 	"github.com/Sirupsen/logrus"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	"html/template"
+	"io"
+	"os"
 
 	"step-2/controllers"
 )
@@ -39,7 +39,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// template
-	t := &Template {
+	t := &Template{
 		templates: template.Must(template.ParseGlob("views/*.html")),
 	}
 	e.Renderer = t

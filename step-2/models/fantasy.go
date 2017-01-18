@@ -1,8 +1,8 @@
 package models
 
 import (
-	"time"
 	"github.com/gocraft/dbr"
+	"time"
 )
 
 type (
@@ -15,7 +15,7 @@ type (
 
 func New(fantasy string) *Fantasy {
 
-	return &Fantasy {
+	return &Fantasy{
 		Fantasy:   fantasy,
 		Createdat: time.Now(),
 	}
